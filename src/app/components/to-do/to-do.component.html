@@ -1,0 +1,25 @@
+<form #form class="form" (ngSubmit)="addTask(); form.reset()">
+  <input
+    class="input"
+    type="text"
+    placeholder="I have to..."
+    name="task"
+    [(ngModel)]="task"
+  >
+  <button class="button" type="submit" [disabled]="!task?.length">
+    <img class="icon" src="../../../assets/icons/add.svg" alt="Add Icon">
+  </button>
+</form>
+
+<p *ngIf="!tasksList.length">Nothing yet.</p>
+
+<p *ngIf="tasksList.length">{{ tasksList.length }} pengind task{{ tasksList.length > 1 ? 's' : '' }}:</p>
+
+<ul class="list">
+  <li class="listItem"*ngFor="let task of tasksList">
+    <span class="name">{{ task }} </span>
+    <div class="iconContainer" (click)="removeTask(task)">
+      <img class="icon" src="../../../assets/icons/revome.svg" alt="Remove Icon">
+    </div>
+  </li>
+</ul>
