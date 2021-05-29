@@ -1,8 +1,6 @@
 # TodoApp 📋
 
-
-https://user-images.githubusercontent.com/51118506/120065006-7a424b80-c06f-11eb-91db-da0a94fc8ee0.mp4
-
+![todo-app](https://user-images.githubusercontent.com/51118506/120065207-664b1980-c070-11eb-86cc-c35e43fe84d3.jpg)
 
 Este proyecto es una aplicación de tareas sencilla desarrollada con [Angular](https://angular.io/) y generada con [Angular CLI](https://angular.io/cli) para la charla "Bases para desarrollar mi primera App en Angular" de [CodeNoobs Conf 2021](https://codenoobsconf.com/).
 
