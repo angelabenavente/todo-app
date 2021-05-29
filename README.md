@@ -94,6 +94,7 @@ import { FormsModule } from '@angular/forms';
 export class AppModule { }
 ```
 -  Crear el formulario en to-do.component.html
+
 ```
 <form #taskForm (ngSubmit)="addTask(); taskForm.reset()">
   <input type="text" placeholder="I have to..." name="task" [(ngModel)]="task">
@@ -136,10 +137,15 @@ export class AppModule { }
 
 ### Maquetar y estilar al gusto usando el archivo to-do.component.html y to-do.component.css 🖌
 
-## Materiales sobre Angular:
-- [Documentación de Angular](https://angular.io/docs)
-- [Angular CLI](https://angular.io/docs)
-- [Como agregar un componente en un módulo](https://gustavodohara.com/blogangular/agregar-componente-una-pagina-modulo-angular/)
-- [Curso Angular, de 0 a experto](https://www.udemy.com/course/angular-fernando-herrera/)
-- [Curso Angular, de complete guide](https://www.udemy.com/course/the-complete-guide-to-angular-2/)
-- [Presentación de introducción a Angular](https://www.canva.com/design/DAEfTbdX_28/ccb70NsnldEPsiubTRfz1A/view?utm_content=DAEfTbdX_28&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
+## Materiales de utilidad:
+1. Materiales de la charla:
+    - [Presentación de introducción a Angular](https://www.canva.com/design/DAEfTbdX_28/ccb70NsnldEPsiubTRfz1A/view?utm_content=DAEfTbdX_28&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
+2. Documentación:
+    - [Angular](https://angular.io/docs)
+    - [Angular CLI](https://angular.io/docs)
+3. Cursos y artículos:
+    - [Como agregar un componente en un módulo](https://gustavodohara.com/blogangular/agregar-componente-una-pagina-modulo-angular/)
+    - [Cómo desplegar un proyecto de Angular en Github Pages](https://javadesde0.com/deploy-subida-de-una-aplicacion-de-angular-a-github-pages-de-forma-totalmente-gratuita/)
+    - [Curso Angular, de 0 a experto](https://www.udemy.com/course/angular-fernando-herrera/)
+    - [Curso Angular, complete guide](https://www.udemy.com/course/the-complete-guide-to-angular-2/)
+
