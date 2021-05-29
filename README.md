@@ -23,7 +23,7 @@ Ejecutar `ng generate component nombre-del-componente` o `ng g c nombre-del-comp
 
 ## Empezando a codear ⚙️
 
-### Importar el componente to-do en app.module.ts
+### Importar el componente to-do en app.module.ts ([Como agregar un componente a un módulo](https://gustavodohara.com/blogangular/agregar-componente-una-pagina-modulo-angular/))
 
 ```
 import { ToDoComponent } from './to-do/to-do.component';
@@ -70,7 +70,7 @@ export class AppModule { }
   }
   
 ```
-### Crear un [formulario driven-template](https://angular.io/docs) en nuestro componente to-do
+### Crear un [formulario driven-template](https://javadesde0.com/template-driven-forms-de-angular/) en nuestro componente to-do
 - Importar FormsModule en app.module.ts
 ```
 import { BrowserModule } from '@angular/platform-browser';
@@ -144,8 +144,8 @@ export class AppModule { }
     - [Angular](https://angular.io/docs)
     - [Angular CLI](https://angular.io/docs)
 3. Cursos y artículos:
-    - [Como agregar un componente en un módulo](https://gustavodohara.com/blogangular/agregar-componente-una-pagina-modulo-angular/)
-    - [Cómo desplegar un proyecto de Angular en Github Pages](https://javadesde0.com/deploy-subida-de-una-aplicacion-de-angular-a-github-pages-de-forma-totalmente-gratuita/)
     - [Curso Angular, de 0 a experto](https://www.udemy.com/course/angular-fernando-herrera/)
     - [Curso Angular, complete guide](https://www.udemy.com/course/the-complete-guide-to-angular-2/)
+    - [Cómo desplegar un proyecto de Angular en Github Pages](https://javadesde0.com/deploy-subida-de-una-aplicacion-de-angular-a-github-pages-de-forma-totalmente-gratuita/)
+
 
