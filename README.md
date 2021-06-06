@@ -65,7 +65,7 @@ export class AppModule { }
 ```
 ```
   removeTask(index: number): void {
-    this.tasksList.splice(taskIndex, 1);
+    this.tasksList.splice(index, 1);
   }
   
 ```
