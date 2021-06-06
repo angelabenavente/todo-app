@@ -8,6 +8,7 @@
   flex-grow: 2;
   padding: 12px 10px 10px;
   border: 2px solid #226cc2b5;
+  border-right: none;
 }
 
 .input:focus{
@@ -16,8 +17,8 @@
 
 .button {
   width: 44px;
+  height: 44px;
   padding: 10px 8px 8px;
-  background-color: #226cc2;
   background-color: #226cc2b5;
   color: white;
   border: none;
@@ -41,11 +42,11 @@
   list-style: none;
 }
 
-.listItem{
+.list-item{
   display: flex;
-  margin-top: 10px;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 .name {
@@ -54,14 +55,16 @@
   background-color: #80808036;
 }
 
-.iconContainer {
+.icon-container {
   display: flex;
   align-content: center;
   justify-content: center;
   width: 44px;
+  height: 44px;
+  margin-left: 10px;
   background-color: #614573;
 }
 
-.iconContainer:hover {
+.icon-container:hover {
   background-color: red;
 }

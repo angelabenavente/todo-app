@@ -16,9 +16,8 @@ export class ToDoComponent{
     this.tasksList.push(this.task);
   }
 
-  removeTask(task: string): void {
-    const taskIndex = this.tasksList.indexOf(task);
-    this.tasksList.splice(taskIndex, 1);
+  removeTask(index: number): void {
+    this.tasksList.splice(index, 1);
   }
 
 }

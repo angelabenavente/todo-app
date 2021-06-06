@@ -2,7 +2,7 @@
   <input
     class="input"
     type="text"
-    placeholder="I have to..."
+    placeholder="Tengo que..."
     name="task"
     [(ngModel)]="task"
   >
@@ -16,9 +16,9 @@
 <p *ngIf="tasksList.length">{{ tasksList.length }} pengind task{{ tasksList.length > 1 ? 's' : '' }}:</p>
 
 <ul class="list">
-  <li class="listItem"*ngFor="let task of tasksList">
+  <li class="list-item" *ngFor="let task of tasksList; let i = index">
     <span class="name">{{ task }} </span>
-    <div class="iconContainer" (click)="removeTask(task)">
+    <div class="icon-container" (click)="removeTask(i)">
       <img class="icon" src="../../../assets/icons/revome.svg" alt="Remove Icon">
     </div>
   </li>
