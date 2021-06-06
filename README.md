@@ -1,27 +1,151 @@
-# TodoApp
+# TodoApp 📋
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+![to-do_app](https://user-images.githubusercontent.com/51118506/120065284-bb872b00-c070-11eb-8dce-a982396094b1.jpg)
 
-## Development server
+Este proyecto es una aplicación de tareas sencilla desarrollada con [Angular](https://angular.io/) y generada con [Angular CLI](https://angular.io/cli) para la charla "Bases para desarrollar mi primera App en Angular" de [CodeNoobs Conf 2021](https://codenoobsconf.com/).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Para comenzar... 🚀
 
-## Code scaffolding
+### Instalar Angular CLI
+Ejecutar `npm install -g @angular/cli`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Crear un nuevo proyecto
 
-## Build
+Ejecutar `ng new nombre-del-proyecto`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Desplegar la aplicación
 
-## Running unit tests
+Ejecutar `ng serve` y navegar a `http://localhost:4200/`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Generar un nuevo componente
 
-## Running end-to-end tests
+Ejecutar `ng generate component nombre-del-componente` o `ng g c nombre-del-componente`. También se puede ejecutar `ng generate directive|pipe|service|class|guard|interface|enum|module` para generar otros elementos.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Empezando a codear ⚙️
 
-## Further help
+### Importar el componente to-do en app.module.ts ([Como agregar un componente a un módulo](https://gustavodohara.com/blogangular/agregar-componente-una-pagina-modulo-angular/))
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+import { ToDoComponent } from './to-do/to-do.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ToDoComponent
+  ],
+  imports: [
+    BrowserModule,
+  ],
+  providers: [],
+})
+export class AppModule { }
+```
+
+### Usar nuestro componente en angular.component.html
+
+```
+<app-to-do></app-to-do>
+```
+
+
+### Crear las propiedades "task" y "tasksList" en to-do.component.ts
+
+```
+  task: string;
+  tasksList: string[] = [];
+  
+```
+
+### Crear las funciones para añadir y borrar tareas en to-do.component.ts
+
+```
+  addTask(): void {
+    this.tasksList.push(this.task);
+  }
+```
+```
+  removeTask(task: string): void {
+    const taskIndex = this.tasksList.indexOf(task);
+    this.tasksList.splice(taskIndex, 1);
+  }
+  
+```
+### Crear un [formulario driven-template](https://javadesde0.com/template-driven-forms-de-angular/) en nuestro componente to-do
+- Importar FormsModule en app.module.ts
+```
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+import { ToDoComponent } from './to-do/to-do.component';
+import { FormsModule } from '@angular/forms';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ToDoComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
+  providers: [],
+})
+export class AppModule { }
+```
+-  Crear el formulario en to-do.component.html
+
+```
+<form #taskForm (ngSubmit)="addTask(); taskForm.reset()">
+  <input type="text" placeholder="I have to..." name="task" [(ngModel)]="task">
+  <button type="submit" [disabled]="!task">Añadir</button>
+</form>
+```
+
+### Crear la lista de tareas en to-do.component.html usando la [directiva ngFor](https://angular.io/api/common/NgForOf) y la [interpolación](https://desarrolloweb.com/articulos/binding-interpolacion-angular.html)
+
+```
+<ul>
+  <li *ngFor="let item of taskList">
+    <p>{{ item }}</p>
+  </li>
+</ul>
+  
+```
+### Añadir un botón para borrar cada tarea
+
+```
+<ul>
+  <li *ngFor="let item of taskList">
+    <p>{{ item }}</p>
+    <button (click)="removeTask(item)">Borrar</button>
+  </li>
+</ul>
+````
+
+### Crear un párrafo que indique cuándo no hay tareas usando la [directiva ngIf](https://angular.io/api/common/NgIf).
+
+```
+<p *ngIf="!taskList.length">No tasks yet.</p>
+```
+
+### Crear un párrafo que indique cuántas tareas hay en total usando la interpolación, la directiva ngIf y el [operador Elvis](https://www.javatpoint.com/kotlin-elvis-operator)
+
+```
+<p *ngIf="tasksList.length">{{ tasksList.length }} pengind task{{ tasksList.length > 1 ? 's' : '' }}:</p>
+```
+
+### Maquetar y estilar al gusto usando el archivo to-do.component.html y to-do.component.css 🖌
+
+## Materiales de utilidad:
+1. Materiales de la charla:
+    - [Presentación de introducción a Angular](https://www.canva.com/design/DAEfTbdX_28/ccb70NsnldEPsiubTRfz1A/view?utm_content=DAEfTbdX_28&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
+2. Documentación:
+    - [Angular](https://angular.io/docs)
+    - [Angular CLI](https://angular.io/docs)
+3. Cursos y artículos:
+    - [Curso Angular, de 0 a experto](https://www.udemy.com/course/angular-fernando-herrera/)
+    - [Curso Angular, complete guide](https://www.udemy.com/course/the-complete-guide-to-angular-2/)
+    - [Cómo desplegar un proyecto de Angular en Github Pages](https://javadesde0.com/deploy-subida-de-una-aplicacion-de-angular-a-github-pages-de-forma-totalmente-gratuita/)
+
+
