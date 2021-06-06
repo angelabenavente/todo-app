@@ -64,8 +64,7 @@ export class AppModule { }
   }
 ```
 ```
-  removeTask(task: string): void {
-    const taskIndex = this.tasksList.indexOf(task);
+  removeTask(index: number): void {
     this.tasksList.splice(taskIndex, 1);
   }
   
@@ -106,19 +105,19 @@ export class AppModule { }
 
 ```
 <ul>
-  <li *ngFor="let item of taskList">
+  <li *ngFor="let item of taskList; let i = index">
     <p>{{ item }}</p>
   </li>
 </ul>
   
 ```
-### Añadir un botón para borrar cada tarea
+### Añadir un botón para borrar cada tarea al que se le pasa el el index de esa tarea
 
 ```
 <ul>
-  <li *ngFor="let item of taskList">
+  <li *ngFor="let item of taskList; let i = index">
     <p>{{ item }}</p>
-    <button (click)="removeTask(item)">Borrar</button>
+    <button (click)="removeTask(i)">Borrar</button>
   </li>
 </ul>
 ````
